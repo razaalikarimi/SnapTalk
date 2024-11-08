@@ -1,13 +1,13 @@
-import {Server} from 'socket.io';
-import http from 'http';
 import express from 'express';
+import http from 'http';
+import { Server } from 'socket.io';
 
 const app = express();
 
 const server = http.createServer(app);
 const io = new Server(server,{
     cors:{
-        origin:['https://slrtech-chatapp.onrender.com'],
+        origin:['https://snaptalk-8lkt.onrender.com'],
         methods:["GET","POST"]
     }
 });
@@ -29,4 +29,4 @@ io.on('connection',(socket)=>{
     });
 });
 
-export {app , io , server}
+export { app, io, server };
